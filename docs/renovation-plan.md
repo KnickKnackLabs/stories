@@ -59,7 +59,7 @@ The next pass should harden conventions before adding more content or mailing-li
 ## First command next session
 
 ```bash
-cd /Users/rikonor/agents/or/stories
+cd /Users/rikonor/agents/rho/stories
 git status --short --branch
 git log --oneline -5
 bun run check 2>&1 | tee /tmp/stories-next-check.log | tail -40
