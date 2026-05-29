@@ -1,0 +1,186 @@
+---
+const cells = Array.from({ length: 9 }, (_, index) => index);
+---
+
+<section class="heroGame" aria-label="Playable tic-tac-toe hero grid" data-hero-game>
+  <div class="heroGameBoard" role="group" aria-label="Tic-tac-toe board">
+    {
+      cells.map((index) => (
+        <button
+          class="heroGameCell"
+          type="button"
+          data-cell={index}
+          aria-label={`Square ${index + 1}, empty`}
+        ></button>
+      ))
+    }
+  </div>
+  <div class="heroGameMeta">
+    <p class="heroGameStatus" data-status aria-live="polite">Your move. X goes first.</p>
+    <button class="heroGameReset" type="button" data-reset>Reset</button>
+  </div>
+</section>
+
+<script>
+  type Mark = 'X' | 'O';
+  type Empty = '';
+  type Cell = Mark | Empty;
+  type Board = Cell[];
+  type FinishedOutcome = Mark | 'draw';
+  type Outcome = FinishedOutcome | null;
+
+  const winningLines = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6],
+  ] as const;
+  const moveOrder = [4, 0, 2, 6, 8, 1, 3, 5, 7];
+
+  for (const game of document.querySelectorAll<HTMLElement>('[data-hero-game]')) {
+    setupGame(game);
+  }
+
+  function setupGame(game: HTMLElement) {
+    let board = emptyBoard();
+    let locked = false;
+    let pendingMove: number | undefined;
+    const cells = Array.from(game.querySelectorAll<HTMLButtonElement>('[data-cell]'));
+    const status = game.querySelector<HTMLElement>('[data-status]');
+    const reset = game.querySelector<HTMLButtonElement>('[data-reset]');
+
+    if (!status || !reset) return;
+
+    const statusElement = status;
+    const resetButton = reset;
+
+    for (const cell of cells) {
+      cell.addEventListener('click', () => playHumanMove(Number(cell.dataset.cell ?? -1)));
+    }
+
+    resetButton.addEventListener('click', () => {
+      if (pendingMove !== undefined) window.clearTimeout(pendingMove);
+      pendingMove = undefined;
+      board = emptyBoard();
+      locked = false;
+      render('Your move. X goes first.');
+    });
+
+    render('Your move. X goes first.');
+
+    function playHumanMove(index: number) {
+      if (locked || board[index] || getOutcome(board)) return;
+
+      board[index] = 'X';
+      const humanOutcome = getOutcome(board);
+      if (humanOutcome) {
+        finish(humanOutcome);
+        return;
+      }
+
+      locked = true;
+      render('The grid is thinking…');
+      pendingMove = window.setTimeout(() => {
+        pendingMove = undefined;
+        const move = findBestMove(board);
+        if (move !== -1) board[move] = 'O';
+        locked = false;
+
+        const gridOutcome = getOutcome(board);
+        if (gridOutcome) {
+          finish(gridOutcome);
+          return;
+        }
+
+        render('Your move. X goes next.');
+      }, 180);
+    }
+
+    function finish(outcome: FinishedOutcome) {
+      const messages: Record<FinishedOutcome, string> = {
+        X: 'You beat the grid! Screenshot this anomaly.',
+        O: 'The grid wins. It is annoyingly patient.',
+        draw: 'Draw. Very respectable.',
+      };
+      render(messages[outcome]);
+    }
+
+    function render(message: string) {
+      const outcome = getOutcome(board);
+
+      for (const cell of cells) {
+        const index = Number(cell.dataset.cell ?? -1);
+        const value = board[index] ?? '';
+        cell.textContent = value;
+        cell.dataset.value = value;
+        cell.disabled = locked || Boolean(value) || Boolean(outcome);
+        cell.setAttribute('aria-label', `Square ${index + 1}, ${value || 'empty'}`);
+      }
+
+      statusElement.textContent = message;
+    }
+  }
+
+  function emptyBoard(): Board {
+    return Array.from({ length: 9 }, () => '');
+  }
+
+  function findBestMove(board: Board): number {
+    let bestScore = -Infinity;
+    let bestMove = -1;
+
+    for (const index of moveOrder) {
+      if (board[index]) continue;
+
+      board[index] = 'O';
+      const score = minimax(board, 0, false);
+      board[index] = '';
+
+      if (score > bestScore) {
+        bestScore = score;
+        bestMove = index;
+      }
+    }
+
+    return bestMove;
+  }
+
+  function minimax(board: Board, depth: number, isGridTurn: boolean): number {
+    const outcome = getOutcome(board);
+    if (outcome === 'O') return 10 - depth;
+    if (outcome === 'X') return depth - 10;
+    if (outcome === 'draw') return 0;
+
+    if (isGridTurn) {
+      let bestScore = -Infinity;
+      for (const index of moveOrder) {
+        if (board[index]) continue;
+        board[index] = 'O';
+        bestScore = Math.max(bestScore, minimax(board, depth + 1, false));
+        board[index] = '';
+      }
+      return bestScore;
+    }
+
+    let bestScore = Infinity;
+    for (const index of moveOrder) {
+      if (board[index]) continue;
+      board[index] = 'X';
+      bestScore = Math.min(bestScore, minimax(board, depth + 1, true));
+      board[index] = '';
+    }
+    return bestScore;
+  }
+
+  function getOutcome(board: Board): Outcome {
+    for (const [a, b, c] of winningLines) {
+      if (board[a] && board[a] === board[b] && board[a] === board[c]) return board[a] as Mark;
+    }
+
+    return board.every(Boolean) ? 'draw' : null;
+  }
+</script>

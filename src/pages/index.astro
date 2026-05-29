@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import HeroGridGame from '../components/HeroGridGame.astro';
 import StoryCard from '../components/StoryCard.astro';
 import SubscribeForm from '../components/SubscribeForm.astro';
 import Layout from '../layouts/Layout.astro';
@@ -14,12 +15,15 @@ const stories = (await getCollection('stories')).sort((a, b) => {
 <Layout>
   <main>
     <section class="hero">
-      <p class="eyebrow">Knick Knack Labs</p>
-      <h1>Stories about small experiments that might become useful things.</h1>
-      <p>
-        This is the future home for KKL stories: prototype writeups, interface explorations,
-        tool notes, and the occasional weird little game.
-      </p>
+      <div class="heroCopy">
+        <p class="eyebrow">Knick Knack Labs</p>
+        <h1>Stories about small experiments that might become useful things.</h1>
+        <p>
+          This is the future home for KKL stories: prototype writeups, interface explorations,
+          tool notes, and the occasional weird little game.
+        </p>
+      </div>
+      <HeroGridGame />
     </section>
 
     <section class="prototypeGrid" aria-label="Prototype lineage">
