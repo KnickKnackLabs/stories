@@ -1,0 +1,19 @@
+{
+  "name": "kkl-stories",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "check": "astro check && astro build"
+  },
+  "dependencies": {
+    "@astrojs/check": "latest",
+    "astro": "latest",
+    "sass": "latest",
+    "typescript": "latest"
+  },
+  "devDependencies": {}
+}

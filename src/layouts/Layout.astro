@@ -1,0 +1,35 @@
+---
+import '../styles/global.scss';
+
+const {
+  title = 'Knick Knack Labs Stories',
+  description = 'Stories from the prototypes, tools, and experiments at Knick Knack Labs.',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class="siteShell">
+      <header class="siteHeader">
+        <a class="brand" href="/">
+          <span class="brandMark">✦</span>
+          <span>Knick Knack Labs Stories</span>
+        </a>
+        <p>Experiments, prototypes, and field notes from Knick Knack Labs.</p>
+      </header>
+
+      <slot />
+
+      <footer class="siteFooter">
+        <p>© Knick Knack Labs. Built in public-ish, one prototype at a time.</p>
+      </footer>
+    </div>
+  </body>
+</html>

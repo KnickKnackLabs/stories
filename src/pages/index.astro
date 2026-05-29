@@ -1,0 +1,53 @@
+---
+import { getCollection } from 'astro:content';
+import StoryCard from '../components/StoryCard.astro';
+import SubscribeForm from '../components/SubscribeForm.astro';
+import Layout from '../layouts/Layout.astro';
+
+const stories = (await getCollection('stories')).sort((a, b) => {
+  const aTime = a.data.pubDate?.getTime() || 0;
+  const bTime = b.data.pubDate?.getTime() || 0;
+  return bTime - aTime;
+});
+---
+
+<Layout>
+  <main>
+    <section class="hero">
+      <p class="eyebrow">Knick Knack Labs</p>
+      <h1>Stories about small experiments that might become useful things.</h1>
+      <p>
+        This is the future home for KKL stories: prototype writeups, interface explorations,
+        tool notes, and the occasional weird little game.
+      </p>
+    </section>
+
+    <section class="prototypeGrid" aria-label="Prototype lineage">
+      <a class="prototypeTile" href="https://rho-ricon.github.io/github-grid-explorer-poc/">
+        <span>01</span>
+        <strong>GitHub Grid Explorer</strong>
+        <small>operational cockpit</small>
+      </a>
+      <a class="prototypeTile" href="https://rho-ricon.github.io/grow-heal-love-practice-explorer-poc/">
+        <span>02</span>
+        <strong>Grow Heal Love</strong>
+        <small>practice cockpit</small>
+      </a>
+      <a class="prototypeTile" href="https://rho-ricon.github.io/weird-grid-games-poc/">
+        <span>03</span>
+        <strong>Weird Grid Games</strong>
+        <small>kid-friendly toys</small>
+      </a>
+    </section>
+
+    <SubscribeForm />
+
+    <section class="storyList" aria-labelledby="stories-heading">
+      <div class="sectionHeader">
+        <p class="eyebrow">Stories</p>
+        <h2 id="stories-heading">First drafts</h2>
+      </div>
+      {stories.map((story) => <StoryCard story={story} />)}
+    </section>
+  </main>
+</Layout>

@@ -1,0 +1,24 @@
+---
+const { compact = false } = Astro.props;
+---
+
+<section class:list={["subscribe", compact && "subscribeCompact"]}>
+  <div>
+    <p class="eyebrow">Mailing list</p>
+    <h2>Get the next story</h2>
+    <p>
+      We are setting up Buttondown for occasional KKL stories about prototypes, agents, tools,
+      and weird little interfaces.
+    </p>
+  </div>
+
+  <form class="subscribeForm" action="#" method="post" data-buttondown-placeholder="true">
+    <label>
+      <span>Email</span>
+      <input type="email" name="email" placeholder="you@example.com" disabled />
+    </label>
+    <button type="button" disabled>Subscribe soon</button>
+  </form>
+
+  <p class="finePrint">Buttondown integration placeholder. No email is submitted yet.</p>
+</section>

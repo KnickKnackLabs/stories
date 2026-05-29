@@ -1,0 +1,16 @@
+---
+const { story } = Astro.props;
+const { data, id } = story;
+const status = data.draft ? 'Draft' : 'Story';
+---
+
+<article class="storyCard">
+  <p class="eyebrow">{status}</p>
+  <h2><a href={`/stories/${id}/`}>{data.title}</a></h2>
+  <p>{data.description}</p>
+  {data.tags.length > 0 && (
+    <ul class="tagList" aria-label="Tags">
+      {data.tags.map((tag: string) => <li>{tag}</li>)}
+    </ul>
+  )}
+</article>

@@ -1,0 +1,36 @@
+---
+import { getCollection, render } from 'astro:content';
+import SubscribeForm from '../../components/SubscribeForm.astro';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const stories = await getCollection('stories');
+  return stories.map((story) => ({ params: { slug: story.id }, props: { story } }));
+}
+
+const { story } = Astro.props;
+const { Content } = await render(story);
+---
+
+<Layout title={`${story.data.title} · Knick Knack Labs Stories`} description={story.data.description}>
+  <main>
+    <article class="storyPage">
+      <header class="storyHeader">
+        <p class="eyebrow">{story.data.draft ? 'Draft story' : 'Story'}</p>
+        <h1>{story.data.title}</h1>
+        <p>{story.data.description}</p>
+        {story.data.tags.length > 0 && (
+          <ul class="tagList" aria-label="Tags">
+            {story.data.tags.map((tag: string) => <li>{tag}</li>)}
+          </ul>
+        )}
+      </header>
+
+      <div class="prose">
+        <Content />
+      </div>
+    </article>
+
+    <SubscribeForm compact />
+  </main>
+</Layout>
