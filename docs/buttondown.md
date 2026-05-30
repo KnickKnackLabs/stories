@@ -23,4 +23,6 @@ Next manual checks:
 4. Confirm the subscriber becomes `regular` in Buttondown and has the `stories-site` tag.
 5. Optionally copy each published story into Buttondown as an email/newsletter send.
 
+Resubscribe note: Buttondown rejects public-form re-subscribe attempts for previously unsubscribed addresses. The form links to Buttondown's subscriber Portal at `https://buttondown.com/login?subscriber=1` for that path.
+
 Later, if manual copy/paste is annoying, add API publishing/sync tooling.
