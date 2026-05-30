@@ -10,11 +10,17 @@ First pass setup:
 4. Buttondown redirects should point back to `https://stories.knacklabs.co/` after subscribe and after confirmation.
 5. Canonical stories stay on `stories.knacklabs.co`; Buttondown is for subscriptions and newsletter sends.
 
+Redirect pages:
+
+- After subscribing: `https://stories.knacklabs.co/subscribed/`
+- After confirming: `https://stories.knacklabs.co/subscribed/confirmed/`
+
 Next manual checks:
 
-1. Submit a non-admin email through the live site.
-2. Confirm the double opt-in email arrives and redirects back to the site.
-3. Confirm the subscriber appears in Buttondown with the `stories-site` tag.
-4. Optionally copy each published story into Buttondown as an email/newsletter send.
+1. Submit a genuinely new non-admin email through the live site.
+2. Confirm Buttondown creates an `unactivated` subscriber and sends the double opt-in email.
+3. Click the confirmation email and confirm redirect to `/subscribed/confirmed/`.
+4. Confirm the subscriber becomes `regular` in Buttondown and has the `stories-site` tag.
+5. Optionally copy each published story into Buttondown as an email/newsletter send.
 
 Later, if manual copy/paste is annoying, add API publishing/sync tooling.
