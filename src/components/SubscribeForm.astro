@@ -1,5 +1,7 @@
 ---
 const { compact = false } = Astro.props;
+const buttondownUsername = 'knickknacklabs';
+const subscribeAction = `https://buttondown.com/api/emails/embed-subscribe/${buttondownUsername}`;
 ---
 
 <section class:list={["subscribe", compact && "subscribeCompact"]}>
@@ -7,18 +9,19 @@ const { compact = false } = Astro.props;
     <p class="eyebrow">Mailing list</p>
     <h2>Get the next story</h2>
     <p>
-      We are setting up Buttondown for occasional KKL stories about prototypes, agents, tools,
-      and weird little interfaces.
+      Occasional KKL stories about prototypes, agents, tools, and weird little interfaces.
     </p>
   </div>
 
-  <form class="subscribeForm" action="#" method="post" data-buttondown-placeholder="true">
+  <form class="subscribeForm" action={subscribeAction} method="post">
     <label>
       <span>Email</span>
-      <input type="email" name="email" placeholder="you@example.com" disabled />
+      <input type="email" name="email" placeholder="you@example.com" autocomplete="email" required />
     </label>
-    <button type="button" disabled>Subscribe soon</button>
+    <input type="hidden" name="embed" value="1" />
+    <input type="hidden" name="tag" value="stories-site" />
+    <button type="submit">Subscribe</button>
   </form>
 
-  <p class="finePrint">Buttondown integration placeholder. No email is submitted yet.</p>
+  <p class="finePrint">Uses Buttondown. You’ll get a confirmation email before anything is sent.</p>
 </section>

@@ -339,12 +339,16 @@ input {
     border: $border;
     border-radius: 999px;
     padding: 12px 15px;
+
+    &:focus-visible {
+      @include focus-ring;
+    }
   }
 
   button {
     background: $green;
     box-shadow: $small-shadow;
-    cursor: not-allowed;
+    cursor: pointer;
     font-weight: 1000;
   }
 }
