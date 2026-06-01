@@ -235,11 +235,16 @@ input {
   }
 }
 
+.prototypeSection,
+.storyList {
+  margin-top: clamp(20px, 4vw, 34px);
+}
+
+.prototypeSection,
 .prototypeGrid,
 .storyList {
   display: grid;
   gap: 16px;
-  margin-top: clamp(20px, 4vw, 34px);
 }
 
 .prototypeGrid {
@@ -277,7 +282,7 @@ input {
     @include focus-ring;
   }
 
-  span {
+  .prototypeNumber {
     width: 48px;
     height: 48px;
     display: grid;
@@ -286,6 +291,16 @@ input {
     border-radius: 14px;
     background: $paper;
     font-weight: 1000;
+  }
+
+  .prototypeCta {
+    width: fit-content;
+    border: 2px solid $ink;
+    border-radius: 999px;
+    background: rgb(255 250 240 / 72%);
+    font-size: 0.82rem;
+    font-weight: 950;
+    padding: 5px 9px;
   }
 
   strong {
@@ -410,6 +425,14 @@ input {
     margin: 0;
     font-size: clamp(1.9rem, 4vw, 3.6rem);
     letter-spacing: -0.06em;
+  }
+
+  > p:not(.eyebrow) {
+    max-width: 44rem;
+    margin: 8px 0 0;
+    color: $muted;
+    font-size: 1rem;
+    line-height: 1.45;
   }
 }
 
