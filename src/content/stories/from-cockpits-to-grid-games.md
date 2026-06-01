@@ -30,11 +30,11 @@ That made the grid feel less like decoration and more like a working surface.
 
 Next we tried the same interaction language in a mocked care-practice operations explorer.
 
-The nouns changed: therapists, clients, sessions, recordings, transcripts, notes, tasks, and groups. The stakes felt different too. A repository cockpit wants to surface build status and review queues. A practice cockpit wants to surface attention, follow-up, and context without pretending that a square can contain the whole story.
+The nouns changed: therapists, clients, sessions, recordings, transcripts, notes, tasks, and groups. This was not deployed with a practice, and it did not use real client data; it was a prototype for thinking about shape, attention, and navigation.
 
-But the pattern mostly survived the jump.
+The stakes still felt different. A repository cockpit wants to surface build status and review queues. A practice cockpit wants to surface attention, follow-up, and context without pretending that a square can contain the whole story.
 
-The grid could still act as a map, a launcher, and a status field. It could still help someone scan a collection before opening the detailed workspace where the real work happens. The surrounding surfaces changed — dossiers, timelines, notes, meters, forms — but the square-grid layer still had a job.
+But the pattern still gave us useful signal. The surrounding surfaces changed — dossiers, timelines, notes, meters, forms — but the square-grid layer still had a job.
 
 That was interesting. But it was still very “operations cockpit.”
 
@@ -66,9 +66,7 @@ The square-grid pattern is blunt, but useful:
 - It gives us a cheap way to mock a domain before over-designing it.
 - It can scale down to toys and up to operational dashboards.
 
-The limits are just as important. A grid is not a whole product. Detail views still need richer surfaces: timelines, transcripts, dossiers, forms, meters, long-form text, and whatever else the domain actually requires.
-
-The grid is usually the map, the launcher, the status field, or the toy board. It is not the whole world.
+The limits are just as important. A grid is not a whole product. It is usually the map, the launcher, the status field, or the toy board. Detail views still need richer surfaces: timelines, transcripts, dossiers, forms, meters, long-form text, and whatever else the domain actually requires.
 
 ## What we learned, for now
 
@@ -78,11 +76,11 @@ The GitHub cockpit asked whether a dense developer system could become more scan
 
 The answer was not a grand theory of squares. It was simpler than that: the path from cockpit to toy was short, and the toy still felt like part of the family.
 
-That gives us a few next questions. Could this become an educational toy for pattern copying, number bonds, shape sorting, phonics tiles, or word-building? Could the same lesson feed back into a cleaner KKL website, a better product demo, a richer care-practice intake surface, or a more general square-grid explorer kit?
+That gives us two next questions. Could this become an educational toy direction: pattern copying, number bonds, shape sorting, phonics tiles, or word-building? Could the same lesson feed back into a tooling direction: a cleaner KKL website, a better product demo, a richer care-practice intake surface, or a more general square-grid explorer kit?
 
-We do not know yet. For now, this is enough: a reusable pattern moved across three small experiments and kept working.
+We do not know yet. For now, this is enough: a reusable pattern moved across three small experiments and stayed useful enough to keep testing.
 
-Knick Knack Labs is a small independent studio trying to make useful things out of prototypes, agents, tools, and weird little interfaces. If that sounds interesting, your attention would mean a lot. Subscribe below and we’ll send occasional stories as we go.
+Knick Knack Labs is a small independent studio making useful things out of prototypes, agents, tools, and weird little interfaces. If you want to follow along while the work is still forming, subscribe below; we’ll send occasional stories as we go.
 
 Related prototypes:
 
