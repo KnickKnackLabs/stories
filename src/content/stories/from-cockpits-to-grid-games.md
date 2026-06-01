@@ -1,8 +1,8 @@
 ---
 title: From Cockpits to Grid Games
 description: A field note on how one square-grid interface idea moved from operational dashboards into a tiny kid-friendly game suite.
-pubDate: 2026-05-28
-draft: true
+pubDate: 2026-06-01
+draft: false
 tags:
   - prototypes
   - interface-design

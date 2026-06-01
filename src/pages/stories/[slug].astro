@@ -4,7 +4,9 @@ import SubscribeForm from '../../components/SubscribeForm.astro';
 import Layout from '../../layouts/Layout.astro';
 
 export async function getStaticPaths() {
-  const stories = await getCollection('stories');
+  const stories = (await getCollection('stories')).filter(
+    (story) => !story.data.draft || import.meta.env.DEV,
+  );
   return stories.map((story) => ({ params: { slug: story.id }, props: { story } }));
 }
 

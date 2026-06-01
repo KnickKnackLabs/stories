@@ -5,11 +5,13 @@ import StoryCard from '../components/StoryCard.astro';
 import SubscribeForm from '../components/SubscribeForm.astro';
 import Layout from '../layouts/Layout.astro';
 
-const stories = (await getCollection('stories')).sort((a, b) => {
-  const aTime = a.data.pubDate?.getTime() || 0;
-  const bTime = b.data.pubDate?.getTime() || 0;
-  return bTime - aTime;
-});
+const stories = (await getCollection('stories'))
+  .filter((story) => !story.data.draft || import.meta.env.DEV)
+  .sort((a, b) => {
+    const aTime = a.data.pubDate?.getTime() || 0;
+    const bTime = b.data.pubDate?.getTime() || 0;
+    return bTime - aTime;
+  });
 ---
 
 <Layout>
@@ -75,7 +77,7 @@ const stories = (await getCollection('stories')).sort((a, b) => {
     <section class="storyList" aria-labelledby="stories-heading">
       <div class="sectionHeader">
         <p class="eyebrow">Stories</p>
-        <h2 id="stories-heading">First drafts</h2>
+        <h2 id="stories-heading">Stories</h2>
       </div>
       {stories.map((story) => <StoryCard story={story} />)}
     </section>
