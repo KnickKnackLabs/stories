@@ -5,11 +5,13 @@ import StoryCard from '../components/StoryCard.astro';
 import SubscribeForm from '../components/SubscribeForm.astro';
 import Layout from '../layouts/Layout.astro';
 
-const stories = (await getCollection('stories')).sort((a, b) => {
-  const aTime = a.data.pubDate?.getTime() || 0;
-  const bTime = b.data.pubDate?.getTime() || 0;
-  return bTime - aTime;
-});
+const stories = (await getCollection('stories'))
+  .filter((story) => !story.data.draft || import.meta.env.DEV)
+  .sort((a, b) => {
+    const aTime = a.data.pubDate?.getTime() || 0;
+    const bTime = b.data.pubDate?.getTime() || 0;
+    return bTime - aTime;
+  });
 ---
 
 <Layout>
@@ -26,22 +28,48 @@ const stories = (await getCollection('stories')).sort((a, b) => {
       <HeroGridGame />
     </section>
 
-    <section class="prototypeGrid" aria-label="Prototype lineage">
-      <a class="prototypeTile" href="https://rho-ricon.github.io/github-grid-explorer-poc/">
-        <span>01</span>
-        <strong>GitHub Grid Explorer</strong>
-        <small>operational cockpit</small>
-      </a>
-      <a class="prototypeTile" href="https://rho-ricon.github.io/grow-heal-love-practice-explorer-poc/">
-        <span>02</span>
-        <strong>Grow Heal Love</strong>
-        <small>practice cockpit</small>
-      </a>
-      <a class="prototypeTile" href="https://rho-ricon.github.io/weird-grid-games-poc/">
-        <span>03</span>
-        <strong>Weird Grid Games</strong>
-        <small>kid-friendly toys</small>
-      </a>
+    <section class="prototypeSection" aria-labelledby="prototype-heading">
+      <div class="sectionHeader">
+        <p class="eyebrow">Prototype lineage</p>
+        <h2 id="prototype-heading">Live sketches</h2>
+        <p>These prototypes open on GitHub Pages so Stories stays a small writing surface.</p>
+      </div>
+
+      <div class="prototypeGrid">
+        <a
+          class="prototypeTile"
+          href="https://rho-ricon.github.io/github-grid-explorer-poc/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <span class="prototypeNumber">01</span>
+          <strong>GitHub Grid Explorer</strong>
+          <small>operational cockpit</small>
+          <span class="prototypeCta" aria-hidden="true">Live demo ↗</span>
+        </a>
+        <a
+          class="prototypeTile"
+          href="https://rho-ricon.github.io/grow-heal-love-practice-explorer-poc/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <span class="prototypeNumber">02</span>
+          <strong>Grow Heal Love</strong>
+          <small>practice cockpit</small>
+          <span class="prototypeCta" aria-hidden="true">Live demo ↗</span>
+        </a>
+        <a
+          class="prototypeTile"
+          href="https://rho-ricon.github.io/weird-grid-games-poc/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <span class="prototypeNumber">03</span>
+          <strong>Weird Grid Games</strong>
+          <small>kid-friendly toys</small>
+          <span class="prototypeCta" aria-hidden="true">Live demo ↗</span>
+        </a>
+      </div>
     </section>
 
     <SubscribeForm />
@@ -49,7 +77,7 @@ const stories = (await getCollection('stories')).sort((a, b) => {
     <section class="storyList" aria-labelledby="stories-heading">
       <div class="sectionHeader">
         <p class="eyebrow">Stories</p>
-        <h2 id="stories-heading">First drafts</h2>
+        <h2 id="stories-heading">Stories</h2>
       </div>
       {stories.map((story) => <StoryCard story={story} />)}
     </section>
