@@ -80,8 +80,6 @@ That gives us two next questions. Could this become an educational toy direction
 
 We do not know yet. For now, this is enough: a pattern worth trying again moved across three small experiments and made us want to keep testing it.
 
-Knick Knack Labs is a small independent studio making useful things out of prototypes, agents, tools, and weird little interfaces. If you want to follow along while the work is still forming, subscribe below; we’ll send occasional stories as we go.
-
 Related prototypes:
 
 - [GitHub Grid Explorer](https://rho-ricon.github.io/github-grid-explorer-poc/)
