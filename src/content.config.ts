@@ -9,6 +9,10 @@ const stories = defineCollection({
     description: z.string(),
     pubDate: z.coerce.date().optional(),
     draft: z.boolean().default(true),
+    author: z.object({
+      name: z.string(),
+      url: z.url().optional(),
+    }).optional(),
     tags: z.array(z.string()).default([]),
   }),
 });

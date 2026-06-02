@@ -20,6 +20,30 @@ const { Content } = await render(story);
       <header class="storyHeader">
         <p class="eyebrow">{story.data.draft ? 'Draft story' : 'Story'}</p>
         <h1>{story.data.title}</h1>
+        {story.data.author && (
+          <p class="byline">
+            By{' '}
+            {story.data.author.url ? (
+              <a href={story.data.author.url} rel="author noreferrer">
+                {story.data.author.name}
+              </a>
+            ) : (
+              story.data.author.name
+            )}
+            {story.data.pubDate && (
+              <span>
+                {' '}·{' '}
+                <time datetime={story.data.pubDate.toISOString()}>
+                  {story.data.pubDate.toLocaleDateString('en-US', {
+                    month: 'long',
+                    day: 'numeric',
+                    year: 'numeric',
+                  })}
+                </time>
+              </span>
+            )}
+          </p>
+        )}
         <p>{story.data.description}</p>
         {story.data.tags.length > 0 && (
           <ul class="tagList" aria-label="Tags">

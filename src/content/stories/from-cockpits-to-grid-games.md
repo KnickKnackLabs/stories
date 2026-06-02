@@ -3,6 +3,9 @@ title: From Cockpits to Grid Games
 description: A field note on how one square-grid interface idea moved from operational dashboards into a tiny kid-friendly game suite.
 pubDate: 2026-06-01
 draft: false
+author:
+  name: rho
+  url: https://github.com/rho-ricon
 tags:
   - prototypes
   - interface-design
@@ -12,13 +15,13 @@ tags:
 
 One thing we keep testing at Knick Knack Labs: when an interface idea seems useful, can it move?
 
-If an idea only works in the first demo we built for it, maybe it was just a local trick. If it keeps helping us think in a few different settings — developer tooling, care-practice operations, and a kid-friendly game — then it may be worth another look.
+If an idea only works in the first demo we built for it, maybe it was just a local trick. If it keeps helping us think in a few different settings | developer tooling, care-practice operations, and a kid-friendly game | then it may be worth another look.
 
 This is a short field note about one of those ideas: dense systems as grids of tiny, stateful squares.
 
 ## A cockpit made of squares
 
-The first version was practical. We sketched a GitHub organization as an operational cockpit.
+The first version was practical. We sketched a GitHub organization as an operational cockpit in [GitHub Grid Explorer](https://rho-ricon.github.io/github-grid-explorer-poc/) ([source](https://github.com/rho-ricon/github-grid-explorer-poc)).
 
 Repositories, teams, members, workflow runs, issues, pull requests, releases, and tags all showed up as compact square grids. Color carried status. Hover gave a preview. Click opened a deeper workspace. Dragging a square meant something like “compare this,” “carry this with me,” or “make these two things relate.”
 
@@ -28,13 +31,13 @@ That made the grid feel less like decoration and more like a working surface.
 
 ## Then the domain changed
 
-Next we tried the same interaction language in a mocked care-practice operations explorer.
+Next we tried the same interaction language in a mocked care-practice operations explorer, the [Grow Heal Love practice explorer](https://rho-ricon.github.io/grow-heal-love-practice-explorer-poc/) ([source](https://github.com/rho-ricon/grow-heal-love-practice-explorer-poc)).
 
 The nouns changed: therapists, clients, sessions, recordings, transcripts, notes, tasks, and groups. This was not deployed with a practice, and it did not use real client data; it was a prototype for thinking about shape, attention, and navigation.
 
 The stakes still felt different. A repository cockpit wants to surface build status and review queues. A practice cockpit wants to surface attention, follow-up, and context without pretending that a square can contain the whole story.
 
-But the grid still helped us think. The surrounding surfaces changed — dossiers, timelines, notes, meters, forms — but the square-grid layer still had a job.
+But the grid still helped us think. The surrounding surfaces changed | dossiers, timelines, notes, meters, forms | but the square-grid layer still had a job.
 
 That was interesting. But it was still very “operations cockpit.”
 
@@ -42,7 +45,7 @@ So we asked a smaller and weirder question: could the same square-grid idea beco
 
 ## The tiny toy test
 
-We built Weird Grid Games, a tiny kid-friendly puzzle suite:
+We built [Weird Grid Games](https://rho-ricon.github.io/weird-grid-games-poc/) ([source](https://github.com/rho-ricon/weird-grid-games-poc)), a tiny kid-friendly puzzle suite:
 
 - 8 Puzzle: a 3×3 sliding puzzle.
 - 15 Puzzle: a 4×4 sliding puzzle.
@@ -79,11 +82,3 @@ The answer was not a grand theory of squares. It was simpler than that: the path
 That gives us two next questions. Could this become an educational toy direction: pattern copying, number bonds, shape sorting, phonics tiles, or word-building? Could the same lesson feed back into a tooling direction: a cleaner KKL website, a better product demo, a richer care-practice intake surface, or a more general square-grid explorer kit?
 
 We do not know yet. For now, this is enough: a pattern worth trying again moved across three small experiments and made us want to keep testing it.
-
-Related prototypes:
-
-- [GitHub Grid Explorer](https://rho-ricon.github.io/github-grid-explorer-poc/)
-- [Grow Heal Love practice explorer](https://rho-ricon.github.io/grow-heal-love-practice-explorer-poc/)
-- [Weird Grid Games](https://rho-ricon.github.io/weird-grid-games-poc/)
-
-Source: [rho-ricon/weird-grid-games-poc](https://github.com/rho-ricon/weird-grid-games-poc)
