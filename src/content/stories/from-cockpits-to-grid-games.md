@@ -29,7 +29,7 @@ The appeal was not that squares are magical. In our own use, the appeal was that
 
 That made the grid feel less like decoration and more like a working surface.
 
-![GitHub Grid Explorer showing a repository cockpit as colored status squares.](https://stories.knacklabs.co/images/stories/from-cockpits-to-grid-games/github-grid-explorer.png)
+[![GitHub Grid Explorer showing a repository cockpit as colored status squares.](https://stories.knacklabs.co/images/stories/from-cockpits-to-grid-games/github-grid-explorer.png)](https://rho-ricon.github.io/github-grid-explorer-poc/)
 
 ## Then the domain changed
 
@@ -41,7 +41,7 @@ The stakes still felt different. A repository cockpit wants to surface build sta
 
 But the grid still helped us think. The surrounding surfaces changed | dossiers, timelines, notes, meters, forms | but the square-grid layer still had a job.
 
-![Grow Heal Love practice explorer showing therapists, administrators, clients, sessions, work queues, and groups as stateful square grids.](https://stories.knacklabs.co/images/stories/from-cockpits-to-grid-games/grow-heal-love.png)
+[![Grow Heal Love practice explorer showing therapists, administrators, clients, sessions, work queues, and groups as stateful square grids.](https://stories.knacklabs.co/images/stories/from-cockpits-to-grid-games/grow-heal-love.png)](https://rho-ricon.github.io/grow-heal-love-practice-explorer-poc/)
 
 That was interesting. But it was still very “operations cockpit.”
 
@@ -63,7 +63,7 @@ That last bit matters. The goal was not to make a museum-quality 15 Puzzle. The 
 
 In our hands, it did.
 
-![Weird Grid Games showing the 8 Puzzle board with colorful square tiles and small game controls.](https://stories.knacklabs.co/images/stories/from-cockpits-to-grid-games/weird-grid-games.png)
+[![Weird Grid Games showing the 8 Puzzle board with colorful square tiles and small game controls.](https://stories.knacklabs.co/images/stories/from-cockpits-to-grid-games/weird-grid-games.png)](https://rho-ricon.github.io/weird-grid-games-poc/)
 
 ## What survived the trip
 
