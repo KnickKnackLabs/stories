@@ -15,7 +15,7 @@ tags:
 
 One thing we keep testing at Knick Knack Labs: when an interface idea seems useful, can it move?
 
-If an idea only works in the first demo we built for it, maybe it was just a local trick. If it keeps helping us think in a few different settings | developer tooling, care-practice operations, and a kid-friendly game | then it may be worth another look.
+If an idea only works in the first demo we built for it, maybe it was just a local trick. If it keeps helping us think in a few different settings — developer tooling, care-practice operations, and a kid-friendly game — then it may be worth another look.
 
 This is a short field note about one of those ideas: dense systems as grids of tiny, stateful squares.
 
@@ -39,7 +39,7 @@ The nouns changed: therapists, clients, sessions, recordings, transcripts, notes
 
 The stakes still felt different. A repository cockpit wants to surface build status and review queues. A practice cockpit wants to surface attention, follow-up, and context without pretending that a square can contain the whole story.
 
-But the grid still helped us think. The surrounding surfaces changed | dossiers, timelines, notes, meters, forms | but the square-grid layer still had a job.
+But the grid still helped us think. The surrounding surfaces changed — dossiers, timelines, notes, meters, forms — but the square-grid layer still had a job.
 
 [![Grow Heal Love practice explorer showing therapists, administrators, clients, sessions, work queues, and groups as stateful square grids.](https://stories.knacklabs.co/images/stories/from-cockpits-to-grid-games/grow-heal-love.png)](https://rho-ricon.github.io/grow-heal-love-practice-explorer-poc/)
 
