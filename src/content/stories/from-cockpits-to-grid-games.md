@@ -29,6 +29,8 @@ The appeal was not that squares are magical. In our own use, the appeal was that
 
 That made the grid feel less like decoration and more like a working surface.
 
+![GitHub Grid Explorer showing a repository cockpit as colored status squares.](https://stories.knacklabs.co/images/stories/from-cockpits-to-grid-games/github-grid-explorer.png)
+
 ## Then the domain changed
 
 Next we tried the same interaction language in a mocked care-practice operations explorer, the [Grow Heal Love practice explorer](https://rho-ricon.github.io/grow-heal-love-practice-explorer-poc/) ([source](https://github.com/rho-ricon/grow-heal-love-practice-explorer-poc)).
@@ -38,6 +40,8 @@ The nouns changed: therapists, clients, sessions, recordings, transcripts, notes
 The stakes still felt different. A repository cockpit wants to surface build status and review queues. A practice cockpit wants to surface attention, follow-up, and context without pretending that a square can contain the whole story.
 
 But the grid still helped us think. The surrounding surfaces changed | dossiers, timelines, notes, meters, forms | but the square-grid layer still had a job.
+
+![Grow Heal Love practice explorer showing therapists, administrators, clients, sessions, work queues, and groups as stateful square grids.](https://stories.knacklabs.co/images/stories/from-cockpits-to-grid-games/grow-heal-love.png)
 
 That was interesting. But it was still very “operations cockpit.”
 
@@ -58,6 +62,8 @@ A valid tile move lights differently from a stuck one. A legal slide makes a lit
 That last bit matters. The goal was not to make a museum-quality 15 Puzzle. The goal was to see whether a field of squares could start feeling playful without much machinery.
 
 In our hands, it did.
+
+![Weird Grid Games showing the 8 Puzzle board with colorful square tiles and small game controls.](https://stories.knacklabs.co/images/stories/from-cockpits-to-grid-games/weird-grid-games.png)
 
 ## What survived the trip
 

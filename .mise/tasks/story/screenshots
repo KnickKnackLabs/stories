@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+#MISE description="Capture static screenshots for story image assets"
+#USAGE flag "--out-dir <out_dir>" default="public/images/stories/from-cockpits-to-grid-games" help="Output directory for screenshots"
+#USAGE flag "--headed" default=#false help="Run browser visibly"
+
+set -euo pipefail
+
+SCRIPT="$MISE_CONFIG_ROOT/scripts/capture-poc-screenshots.mjs"
+OUT_DIR="${usage_out_dir:-public/images/stories/from-cockpits-to-grid-games}"
+
+if [[ "$OUT_DIR" != /* ]]; then
+  OUT_DIR="$MISE_CONFIG_ROOT/$OUT_DIR"
+fi
+
+mkdir -p "$OUT_DIR"
+
+browser setup >/dev/null
+
+args=(run)
+if [ "${usage_headed:-false}" = "true" ]; then
+  args+=(--headed)
+fi
+args+=("$SCRIPT" "$OUT_DIR")
+
+browser "${args[@]}"
