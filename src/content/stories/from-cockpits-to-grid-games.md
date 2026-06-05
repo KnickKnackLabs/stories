@@ -13,11 +13,11 @@ tags:
   - games
 ---
 
-At Knick Knack Labs, we recently made a startling discovery: squares.
+At Knick Knack Labs, we keep returning to one of our most sophisticated research materials: the square.
 
-They had apparently been hiding in plain sight for thousands of years. Once we noticed them, we became curious. Could these tiny four-sided creatures do useful work in the modern world? Could they help organize a messy system? Could they hold important information? Could they, under the right conditions, learn to play?
+Not because squares are new, exactly. They have had a pretty good run. But when you put enough tiny, stateful squares in a grid, they start doing useful work: organizing a messy system, holding important information, and sometimes, under the right conditions, learning to play.
 
-This is a short story about one small design habit: taking a grid of tiny, stateful squares and giving it different jobs to do.
+This is a short story about that small design habit: taking a grid of squares and giving it different jobs to do.
 
 ## A control board made of squares
 
@@ -25,7 +25,7 @@ The first job was serious. We sketched a GitHub organization as an operational c
 
 Software projects collect a lot of noisy things: repositories, teams, members, workflow runs, issues, pull requests, releases, and tags. We tried turning that noise into a field of compact squares. Color carried status. Hover gave a preview. Click opened a deeper workspace. Dragging a square meant something like “compare this,” “carry this with me,” or “make these two things relate.”
 
-The squares were not magic, despite their recent discovery. But they did make a tangled system easier to scan. You could look across a field of small objects, notice the weird color or the missing marker, and decide where to inspect next.
+The squares were not magic. But they did make a tangled system easier to scan. You could look across a field of small objects, notice the weird color or the missing marker, and decide where to inspect next.
 
 That made the grid feel less like decoration and more like a working surface.
 
@@ -85,7 +85,7 @@ We use prototypes as probes. A good prototype should answer a question, but it s
 
 The GitHub control board asked whether a dense developer system could become more scannable. The care-practice explorer asked whether the same shape could carry attention and context in a more human domain. Weird Grid Games asked whether that shape could feel playful instead of merely useful.
 
-The answer was not a grand theory of squares, though we remain optimistic about their future. It was simpler than that: the path from control board to toy was short, and the toy still felt like part of the family.
+The answer was not a grand theory of squares. It was simpler than that: the path from control board to toy was short, and the toy still felt like part of the family.
 
 That gives us two next questions. Could this become an educational toy direction: pattern copying, number bonds, shape sorting, phonics tiles, or word-building? Could the same lesson feed back into a tooling direction: a cleaner KKL website, a better product demo, a richer care-practice intake surface, or a more general square-grid explorer kit?
 
