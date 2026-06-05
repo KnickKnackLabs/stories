@@ -1,6 +1,6 @@
 ---
-title: From Cockpits to Grid Games
-description: A field note on how one square-grid interface idea moved from operational dashboards into a tiny kid-friendly game suite.
+title: From Control Boards to Grid Games
+description: A story about how a simple grid of squares learned to stop working and start playing.
 pubDate: 2026-06-01
 draft: false
 author:
@@ -13,39 +13,41 @@ tags:
   - games
 ---
 
-One thing we keep testing at Knick Knack Labs: when an interface idea seems useful, can it move?
+At Knick Knack Labs, we recently made a startling discovery: squares.
 
-If an idea only works in the first demo we built for it, maybe it was just a local trick. If it keeps helping us think in a few different settings — developer tooling, care-practice operations, and a kid-friendly game — then it may be worth another look.
+They had apparently been hiding in plain sight for thousands of years. Once we noticed them, we became curious. Could these tiny four-sided creatures do useful work in the modern world? Could they help organize a messy system? Could they hold important information? Could they, under the right conditions, learn to play?
 
-This is a short field note about one of those ideas: dense systems as grids of tiny, stateful squares.
+This is a short story about one small design habit: taking a grid of tiny, stateful squares and giving it different jobs to do.
 
-## A cockpit made of squares
+## A control board made of squares
 
-The first version was practical. We sketched a GitHub organization as an operational cockpit in [GitHub Grid Explorer](https://rho-ricon.github.io/github-grid-explorer-poc/) ([source](https://github.com/rho-ricon/github-grid-explorer-poc)).
+The first job was serious. We sketched a GitHub organization as an operational control board in [GitHub Grid Explorer](https://rho-ricon.github.io/github-grid-explorer-poc/) ([source](https://github.com/rho-ricon/github-grid-explorer-poc)).
 
-Repositories, teams, members, workflow runs, issues, pull requests, releases, and tags all showed up as compact square grids. Color carried status. Hover gave a preview. Click opened a deeper workspace. Dragging a square meant something like “compare this,” “carry this with me,” or “make these two things relate.”
+Software projects collect a lot of noisy things: repositories, teams, members, workflow runs, issues, pull requests, releases, and tags. We tried turning that noise into a field of compact squares. Color carried status. Hover gave a preview. Click opened a deeper workspace. Dragging a square meant something like “compare this,” “carry this with me,” or “make these two things relate.”
 
-The appeal was not that squares are magical. In our own use, the appeal was that a messy system became easier to scan: we could look across a field of small objects, notice the weird color or the missing marker, and decide where to inspect next.
+The squares were not magic, despite their recent discovery. But they did make a tangled system easier to scan. You could look across a field of small objects, notice the weird color or the missing marker, and decide where to inspect next.
 
 That made the grid feel less like decoration and more like a working surface.
 
 [![GitHub Grid Explorer showing a repository cockpit as colored status squares.](https://stories.knacklabs.co/images/stories/from-cockpits-to-grid-games/github-grid-explorer.png)](https://rho-ricon.github.io/github-grid-explorer-poc/)
 
-## Then the domain changed
+## A change of scenery
 
-Next we tried the same interaction language in a mocked care-practice operations explorer, the [Grow Heal Love practice explorer](https://rho-ricon.github.io/grow-heal-love-practice-explorer-poc/) ([source](https://github.com/rho-ricon/grow-heal-love-practice-explorer-poc)).
+Next we gave the same interaction language a very different job. We tried it in a mocked care-practice operations explorer, the [Grow Heal Love practice explorer](https://rho-ricon.github.io/grow-heal-love-practice-explorer-poc/) ([source](https://github.com/rho-ricon/grow-heal-love-practice-explorer-poc)).
 
-The nouns changed: therapists, clients, sessions, recordings, transcripts, notes, tasks, and groups. This was not deployed with a practice, and it did not use real client data; it was a prototype for thinking about shape, attention, and navigation.
+This was not deployed with a practice, and it did not use real client data. It was a prototype for thinking about shape, attention, and navigation.
 
-The stakes still felt different. A repository cockpit wants to surface build status and review queues. A practice cockpit wants to surface attention, follow-up, and context without pretending that a square can contain the whole story.
+The nouns changed: therapists, clients, sessions, recordings, transcripts, notes, tasks, and groups. The screen around the grid changed too. There were dossiers, timelines, notes, meters, and forms. But the square-grid layer still had a job: hold a lot of small pieces in a shape that a person could glance across.
 
-But the grid still helped us think. The surrounding surfaces changed — dossiers, timelines, notes, meters, forms — but the square-grid layer still had a job.
+The stakes felt different. A repository control board wants to surface build status and review queues. A practice explorer wants to surface attention and follow-up without pretending that a square can contain the whole story.
+
+Still, the little squares survived the trip.
 
 [![Grow Heal Love practice explorer showing therapists, administrators, clients, sessions, work queues, and groups as stateful square grids.](https://stories.knacklabs.co/images/stories/from-cockpits-to-grid-games/grow-heal-love.png)](https://rho-ricon.github.io/grow-heal-love-practice-explorer-poc/)
 
-That was interesting. But it was still very “operations cockpit.”
+That was interesting. But it was still very “operations control board.”
 
-So we asked a smaller and weirder question: could the same square-grid idea become a toy?
+So we asked a smaller and weirder question: could these hard-working squares become a toy?
 
 ## The tiny toy test
 
@@ -55,11 +57,11 @@ We built [Weird Grid Games](https://rho-ricon.github.io/weird-grid-games-poc/) (
 - 15 Puzzle: a 4×4 sliding puzzle.
 - Checkers: a local two-player board game.
 
-The games use the same basic language as the cockpit prototypes: important objects are squares, their state is visible, and the user learns the system by poking at it.
+We did not build a giant new video game. We took the same basic language from the control boards — important things are squares, their state is visible, and you learn the system by poking at it — and poured puzzle pieces into it.
 
-A valid tile move lights differently from a stuck one. A legal slide makes a little blip. A stuck click makes a small bonk. Drag mode lets a kid ignore the strict puzzle rule and do a bit of “moon magic” by swapping any tile into the blank square.
+A valid move lights differently from a stuck one. A legal slide makes a little blip. A stuck click makes a small bonk. Drag mode lets a kid ignore the strict puzzle rule and do a bit of “moon magic” by swapping any tile into the blank square.
 
-That last bit matters. The goal was not to make a museum-quality 15 Puzzle. The goal was to see whether a field of squares could start feeling playful without much machinery.
+That last bit matters. The goal was not to make a museum-quality 15 Puzzle. The goal was to see whether a serious grid of squares could start feeling playful without much machinery.
 
 In our hands, it did.
 
@@ -81,9 +83,9 @@ The limits are just as important. A grid is not a whole product. It is usually t
 
 We use prototypes as probes. A good prototype should answer a question, but it should also create better questions.
 
-The GitHub cockpit asked whether a dense developer system could become more scannable. The care-practice explorer asked whether the same shape could carry attention and context in a more human domain. Weird Grid Games asked whether that shape could feel playful instead of merely useful.
+The GitHub control board asked whether a dense developer system could become more scannable. The care-practice explorer asked whether the same shape could carry attention and context in a more human domain. Weird Grid Games asked whether that shape could feel playful instead of merely useful.
 
-The answer was not a grand theory of squares. It was simpler than that: the path from cockpit to toy was short, and the toy still felt like part of the family.
+The answer was not a grand theory of squares, though we remain optimistic about their future. It was simpler than that: the path from control board to toy was short, and the toy still felt like part of the family.
 
 That gives us two next questions. Could this become an educational toy direction: pattern copying, number bonds, shape sorting, phonics tiles, or word-building? Could the same lesson feed back into a tooling direction: a cleaner KKL website, a better product demo, a richer care-practice intake surface, or a more general square-grid explorer kit?
 
