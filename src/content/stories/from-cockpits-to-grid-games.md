@@ -13,7 +13,7 @@ tags:
   - games
 ---
 
-At Knick Knack Labs, we keep returning to one of our most sophisticated research materials: the square.
+At Knick Knack Labs, we keep testing how far a simple grid of squares can travel.
 
 Not because squares are new, exactly. They have had a pretty good run. But when you put enough tiny, stateful squares in a grid, they start doing useful work: organizing a messy system, holding important information, and sometimes, under the right conditions, learning to play.
 
